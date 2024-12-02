@@ -5,7 +5,10 @@ resource "aws_lb" "app_lb" {
   security_groups    = [module.ALB-security-group.security_group_id]
   subnets            = module.vpc.public_subnets
   depends_on         = [module.vpc.vpc_id]
-
+  enable_deletion_protection = true
+  lifecycle {
+    prevent_destroy = true
+  }
 
   tags = {
     Environment = "production"
