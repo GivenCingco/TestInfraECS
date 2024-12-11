@@ -23,7 +23,7 @@ terraform {
 
 provider "aws" {
   region  = "eu-west-2"
-  profile = "given_hpo_user"
+  profile = "given_icloud"
 }
 
 # resource "aws_s3_bucket" "terraform_state" {
